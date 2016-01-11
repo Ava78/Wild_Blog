@@ -1,0 +1,15 @@
+<h1> Affichage d'un Article </h1>
+
+<p><%= @un_article.title %></p>
+
+<!--Formulaire pour modifier le titre d'un livre -->
+<%= form_tag "/articles/#{@un_article.id}", method: "patch" do %>
+  <input type ="text" name="Titre de l'Article">
+  <input type="submit" value="Modifier l'Article">
+<% end %>
+
+<%= form_tag "/articles/#{@un_article.id}", method: "delete" do %>
+  <input type="submit" value="Supprimer l'Article">
+<% end %> 
+
+<a href="/articles">Revenir à la liste</a>

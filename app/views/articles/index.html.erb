@@ -1,0 +1,14 @@
+<h1>Bienvenue sur le Blog de Ava</h1>
+<p>Ici vous trouverez l'ensemble de mes articles</p>
+
+<% @articles.each do |un_article| %>
+  <p><a href="/articles/<%=un_article.id%>"><%= un_article.title %></a></p>
+ <% end %>
+
+
+
+<%= form_tag "/articles/", method: "post" do %>
+  <input type="text" value="Titre de l'Article"> </br>
+  <input type="text" value="Description de l'Article"> </br>
+  <input type="submit" value="Ajouter un Article">
+<% end %>
